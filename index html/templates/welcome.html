@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='welcome.css') }}"
+  />
+  <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='welcome.js') }}"
+  ></script>
+  </head>
+  <body>
+    <div class="welcome" name="welcome">
+      <h1>{{ name }} has {{ activity }} at</h1>
+      <h2>{{ timestamp }} </h2>
+      <h3>on</h3>
+      <h4>{{ date }}</h4>
+    </div>
+    <div hidden class="success-checkmark">
+      <div class="check-icon">
+        <span class="icon-line line-tip"></span>
+        <span class="icon-line line-long"></span>
+        <div class="icon-circle"></div>
+        <div class="icon-fix"></div>
+      </div>
+    </div>
+    <script>this.addEventListener("click",function () { document.querySelector(".success-checkmark").style.display="block";})</script>
+    
+    <div clss="confirmation" name="confirm">
+      <h2>To help us improve, please can you verify is this was you</h2>
+      <form action="/" method = 'get'>
+      <input type="hidden" name="name" value="{{ name }}">
+      <input type="hidden" name="activity" value="{{ activity }}">
+      <input type="hidden" name="timestamp" value="{{ timestamp }}">
+      <input type="hidden" name="date" value="{{ date }}">
+      <input type="submit" style="font-size: 20px; height: 50px; width: 200px" name="yes" value="Yes, it was I">
+      <input
+        type="submit"
+        style="font-size: 20px; height: 50px; width: 200px"
+        name="no"
+        value="No, I lets try again"
+        href="/welcome"
+      />
+    </div>
+    <div id="root"></div>
+  </body>
+</html>

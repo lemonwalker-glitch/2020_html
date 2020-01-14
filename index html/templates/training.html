@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='training.css') }}"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+      integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
+      crossorigin="anonymous"
+    ></script>
+
+    <h1>Training images, please wait...</h1>
+    <script>
+      var socket = io.connect("http://localhost:5000");
+      socket.on("connect", function() {
+        socket.emit("training model", {
+          data: "User Connected"
+        });
+      });
+
+      socket.on("my response", function(msg) {
+        console.log(msg);
+      });
+      // this nigger here will read the function passed from the my redirect function and re-routes to the welcome page -->
+      socket.on("redirect", function(data) {
+        console.log("going to webpage: " + data.url);
+        window.location = data.url;
+      });
+    </script>
+    <div class="loader">
+      <div class="loaderBar"></div>
+    </div>
+  </body>
+</html>

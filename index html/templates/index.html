@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400" />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='TweenMax.js') }}"
+    ></script>
+    <!-- <script src="jquery-3.4.1.min.js"></script>-->
+  </head>
+  <body>
+    <div class="checkin" id="checkin">
+      <p>checkin</p>
+    </div>
+    <div class="checkout" id="checkout">
+      <p>checkout</p>
+    </div>
+    <div>
+      <form method = 'post' enctype=multipart/form-data>
+      <input
+        type="submit"
+        style="font-size: 20px; height: 50px; width: 100px"
+        name="button"
+        value="checkout"
+      />
+      <!--  <button class="checkout-button" name="checkout-button">checkout</button> -->
+      <h3>
+        If you are a New User please click here ====>
+        <a href="/what-is-your-name" class="button">New User</a>
+      </h3>
+    </div>
+
+    <div>
+      <h3>
+        To Download report ====>
+        <a href="/auth-report" class="button">Download</a>
+      </h3>
+    </div>
+
+    <!-- <div class="buttons">
+      <form method = 'post' enctype=multipart/form-data>
+        <input type="submit" name="button" value="checkin" />
+           <button class="checkin_button" name="checkin_button">checkin</button> 
+      <form method = 'post' enctype=multipart/form-data>
+        <input type="submit" name="button" value="checkout" />
+          <button class="checkout-button" name="checkout-button">checkout</button> 
+      </div> 
+    </div>-->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+  </body>
+</html>

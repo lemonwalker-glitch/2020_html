@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='whatisyourname.css') }}"
+    />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='whatisyourname.js') }}"
+    ></script>
+  </head>
+  <body>
+    <div class="subscribe-box">
+      <h2>Subscribe to our mailing list</h2>
+      <form class="subscribe">
+        <input
+          type="email"
+          placeholder="example@gmail.com"
+          autocomplete="off"
+          required="required"
+        />
+        <button type="submit"><span>Subscribe</span></button>
+      </form>
+    </div>
+  </body>
+</html>
